@@ -3,6 +3,18 @@ const b = process.argv[3];
 
 /**
  *
+ * @description The function is for checking if the param is a letter
+ * @param {String} str string to be check
+ * @returns boolean
+ *
+ */
+const isLetter = str => {
+	const rule = /^[a-z]+$/i;
+	return rule.test(str);
+};
+
+/**
+ *
  * @description The function is for creating char map
  * @param {String} text String to be coverted into Object
  * @returns char map
@@ -11,7 +23,7 @@ const b = process.argv[3];
 const makeMap = text => {
 	const map = {};
 	for (let char of text) {
-		if (char !== ' ') {
+		if (isLetter(char)) {
 			const key = char.toLowerCase();
 			const num = map[key];
 			map[key] = num ? num + 1 : 1;
@@ -26,11 +38,24 @@ const makeMap = text => {
  * @param {String} text1 The first string
  * @param {String} text2 The second string
  * @returns boolean
- * 
+ *
  */
 const isValid = (text1, text2) => {
 	if (!text1 || !text2) throw new Error('Required 2 words / phrases');
 	return true;
+};
+
+/**
+ * 
+ * @description The function is to check if the length of 2 Object are the same
+ * @param {Object} map1 the first map
+ * @param {Object} map2 the second map
+ * @returns boolean
+ * 
+ */
+const isLengthMatch = (map1, map2) => {
+	const getLength = obj => Object.keys(obj).length;
+	return getLength(map1) === getLength(map2);
 };
 
 /**
@@ -43,6 +68,7 @@ const isValid = (text1, text2) => {
 const isAnagram = (...args) => {
 	if (!isValid(...args)) return;
 	const [map1, map2] = args.map(makeMap);
+	if (!isLengthMatch(map1, map2)) return false;
 	for (let char in map1) {
 		if (map1[char] !== map2[char]) return false;
 	}
