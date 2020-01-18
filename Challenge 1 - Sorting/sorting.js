@@ -21,7 +21,7 @@ const quickSort = arr => {
 
 	const partition = num => {
 		num <= pivot ? left.push(num) : right.push(num);
-    };
+	};
 
 	arr.forEach(partition);
 	return [...quickSort(left), pivot, ...quickSort(right)];
