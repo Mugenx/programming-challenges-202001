@@ -22,8 +22,7 @@ function logResult(palindrome, num) {
  *
  */
 function makePalindrome(num) {
-	const palindrome =
-		num + ('' + num).split('').reverse().join('');
+	const palindrome = num + ('' + num).split('').reverse().join('');
 	return Number(palindrome);
 }
 
