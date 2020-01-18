@@ -35,13 +35,14 @@ const makeMap = text => {
 /**
  *
  * @description The function is for validating the strings
- * @param {String} text1 The first string
- * @param {String} text2 The second string
+ * @param {Array} args array of text1, text2
  * @returns boolean
  *
  */
-const isValid = (text1, text2) => {
-	if (!text1 || !text2) throw new Error('Required 2 words / phrases');
+const isValid = args => {
+	args.forEach(arg => {
+		if (!arg) throw new Error('Required 2 words / phrases');
+	})
 	return true;
 };
 
@@ -61,12 +62,13 @@ const isLengthMatch = (map1, map2) => {
 /**
  *
  * @description The function is for determine if two strings of letters are anagrams
- * @param  {...any} args array of text1, text2
+ * @param  {String} text1 The first word / phrase
+ * @param  {String} text2 The second word / phrase
  * @returns boolean
  *
  */
 const isAnagram = (...args) => {
-	if (!isValid(...args)) return;
+	if (!isValid(args)) return;
 	const [map1, map2] = args.map(makeMap);
 	if (!isLengthMatch(map1, map2)) return false;
 	for (let char in map1) {
