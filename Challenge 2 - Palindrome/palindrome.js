@@ -34,12 +34,12 @@ function makePalindrome(num) {
 const getLargiestPalindrome = () => {
 	const max = Math.pow(10, digit) - 1;
 	const min = Math.pow(10, digit - 1) - 1;
-	
-    let half = Math.floor((max * max) / Math.pow(10, digit));
+
+	let half = Math.floor((max * max) / Math.pow(10, digit));
 	let stop = false;
 	let palindrome, num;
 	while (!stop) {
-        palindrome = makePalindrome(half);
+		palindrome = makePalindrome(half);
 		for (i = max; i > min; i--) {
 			if (palindrome / i > max || i * i < palindrome) break;
 			if (palindrome % i === 0) {
@@ -49,7 +49,7 @@ const getLargiestPalindrome = () => {
 			}
 		}
 		half--;
-    }
+	}
 	logResult(palindrome, num);
 };
 
