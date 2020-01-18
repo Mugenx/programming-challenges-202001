@@ -4,12 +4,12 @@ const digit = process.argv[2] || 3;
 /**
  * 
  * @description Logs the result
- * @param {Number} palindrom The largest palindrome
+ * @param {Number} palindrome The largest palindrome
  * @param {Number} num factor of the palindrome
  * 
  */
-function logResult(palindrom, num) {
-    const result = `${palindrom} = ${num} x ${palindrom / num}`;
+function logResult(palindrome, num) {
+    const result = `${palindrome} = ${num} x ${palindrome / num}`;
     console.log(`The largest palindrome made from the product of two ${digit}-digit numbers is: ${result}`);
 }
 
@@ -20,8 +20,8 @@ function logResult(palindrom, num) {
  * 
  */
 function makePalindrome(num) {
-    const palindrom = num + ('' + num).split('').reverse().join('')
-    return Number(palindrom);
+    const palindrome = num + ('' + num).split('').reverse().join('')
+    return Number(palindrome);
 }
 
 /**
@@ -35,12 +35,12 @@ const getLargiestPalindrome = () => {
 
 	let half = Math.floor((max * min) / 100);
 	let stop = false;
-	let palindrom, num;
+	let palindrome, num;
 	while (!stop) {
-        palindrom = makePalindrome(half);
+        palindrome = makePalindrome(half);
 		for (i = max; i > min; i--) {
-            if (palindrom / i > max || i * i < palindrom) break;
-			if (palindrom % i === 0) {
+            if (palindrome / i > max || i * i < palindrome) break;
+			if (palindrome % i === 0) {
                 stop = !stop;
 				num = i;
 				break;
@@ -48,7 +48,7 @@ const getLargiestPalindrome = () => {
 		}
 		half--;
     }
-    logResult(palindrom, num)
+    logResult(palindrome, num)
 };
 
 getLargiestPalindrome();
