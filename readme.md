@@ -21,10 +21,4 @@ The script requires [Node](https://nodejs.org/en/),
 with the version which supports JavaScript ES6.
 
 ## How to run
-Please see detail descriptions under each challenge:
-
-[Challenge 1 - Anagram](Challenge\ 1\ -\ Sorting )
-
-[Challenge 2 - Palindrome](Challenge\ 2\ -\ Palindrome)
-
-[Challenge 3 - Anagram](Challenge\ 3\ -\ Anagram)
+Please see detail descriptions under each challenge.
