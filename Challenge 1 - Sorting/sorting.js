@@ -1,4 +1,7 @@
-const arr = [40, 2, 66, 93, 32];
+const getNum = () => Math.floor(Math.random() * 100);
+
+// an array of 100 random integers bewtween 1 and 99
+const nums = [...Array(100)].map(getNum);
 
 const quickSort = arr => {
 	if (arr.length <= 1) return arr;
@@ -6,14 +9,11 @@ const quickSort = arr => {
 	const left = [];
 	const right = [];
 
-	for (let i = 0; i < arr.length; i++) {
-		if (arr[i] <= pivot) {
-			left.push(arr[i]);
-		} else {
-			right.push(arr[i]);
-		}
-	}
+	const patition = num => {
+		num <= pivot ? left.push(num) : right.push(num);
+	};
+	arr.forEach(patition);
 	return [...quickSort(left), pivot, ...quickSort(right)];
 };
 
-console.log(quickSort(arr));
+console.log(quickSort(nums));
