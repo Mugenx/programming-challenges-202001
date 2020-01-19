@@ -1,5 +1,9 @@
 # Programming Challenge #1 - Sorting
 
-Generate a list of 100 random integers between 1 and 99.
+The script will generate a list of 100 random integers between 1 and 99, then will print the sorted this list, from lowest to highest.
 
-Write a program to sort this list, from lowest to highest, without using a language specific method that sorts a list for you
+## How to run
+
+The script requires JavaScript ES6
+
+command: `node sorting.js`

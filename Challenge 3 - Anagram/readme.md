@@ -13,3 +13,15 @@ returns true`
 
 `ex 4. isAnagram(Dormitory, Dirty rooms)
 returns false`
+
+## Environment
+The script requires [Node](https://nodejs.org/en/),
+with the version which supports JavaScript ES6.
+
+## How to run
+You can run the code with the command:
+
+`node anagram.js <text1> <text2>`
+
+##### Example
+`node anagram.js "Debit Card" "Bad Credit"`
